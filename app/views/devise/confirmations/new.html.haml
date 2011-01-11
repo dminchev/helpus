@@ -1,0 +1,17 @@
+.span-18.last{:align => "right"}
+  %h2 инструкции за активация
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+  .span-18.last{:align => "center"}
+    = devise_error_messages!
+    %p не получихте инструкции за активация?
+    
+  .span-9.input-label{:align => "right"}
+    %b e-mail
+  .span-9.input-holder.last{:align => "left"}
+    = f.email_field :email
+    
+  .span-18.last{:align => "center"}
+    = f.submit "изпрати"
+
+.span-18.last{:align => "right"}
+  %br= render :partial => "devise/shared/links"

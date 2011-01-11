@@ -1,0 +1,7 @@
+= image_tag("cover.png", :id => "cover-image", :border => "0", :usemap => "#cover-map")
+
+%map{:name => "cover-map"}
+  - unless user_signed_in?
+    %area{:alt => "Venus", :coords => "955,804,0,0", :border => '1', :href => new_user_session_path, :shape => "rect"}/
+  - else
+    %area{:alt => "Venus", :coords => "955,804,0,0", :border => '1', :href => user_root_path, :shape => "rect"}/

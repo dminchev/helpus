@@ -1,0 +1,7 @@
+- semantic_form_for [:admin, @magazine, @accent, @photo], :html => { :multipart => true } do |form|
+  = form.inputs :name => "Basic" do
+    = form.input :name
+    = form.input :title
+    = form.input :file      
+  = form.buttons do
+    = form.commit_button

@@ -1,0 +1,10 @@
+- if @accent.image_title?
+  .span-19.image-title.last{:align => "right"}
+    = image_tag(@accent.image_title.url(:medium))
+.span-18.last{:align => "right"}
+  %h3
+    = @accent.title
+.span-16.page-content.last{:align => "justify"}
+  = raw @accent.text.gsub(/\n/, '<br>')
+.span-18.last{:align => "center"}
+  = render "shared/comments"

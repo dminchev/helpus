@@ -1,0 +1,17 @@
+%p 
+  здравейте, #{@resource.email}!
+
+%p 
+  вие успешно преминахте през процеса на регистрация на 
+  = link_to "helpus.bg", "helpus.bg"
+  \. за да активирате вашия потребителски профил, моля кликнете 
+  = link_to 'тук', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+  или копирайте линка по-долу във вашия браузър:
+
+%p= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+
+%p ако имате въпроси, можете да ни пишете на team@helpus.bg.
+
+поздрави,
+%br 
+%b helpus team  

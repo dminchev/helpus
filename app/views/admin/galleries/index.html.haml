@@ -1,0 +1,23 @@
+%h2 
+  Галерия (#{link_to "добави снимка", new_admin_magazine_gallery_path})
+%table
+  %tr
+    %th ID
+    %th Име
+    %th Заглавие
+    %th Снимка
+    %th
+  - @galleries.each do |gallery|
+    %tr
+      %td 
+        = gallery.id
+      %td
+        = gallery.name
+      %td
+        = gallery.title
+      %td
+        = image_tag(gallery.file.url(:thumb))
+      %td
+        = link_to "промяна", edit_admin_magazine_gallery_path(@magazine, gallery)
+        = link_to "изтриване", admin_magazine_gallery_path(@magazine, gallery), :method => "delete"
+  

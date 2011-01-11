@@ -1,0 +1,15 @@
+.left-panel-top
+.left-panel-content
+  - @accents.each do |accent|
+    = link_to image_tag(accent.image.url, :name => "accent#{accent.id}", :onmouseover => "roll('accent#{accent.id}', '#{accent.image_hover.url}')", :onmouseout => "roll('accent#{accent.id}', '#{accent.image.url}')"), accent_path(accent)
+    .devider-3
+  .devider-4{:align => "center"}
+  %object{:classid => "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000", :codebase => "http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0", :height => "240", :width => "120"}
+    %param{:name => "movie", :value => "/flash/banner_2.swf"}
+      %param{:name => "play", :value => "true"}
+        %param{:name => "loop", :value => "true"}
+          %param{:name => "quality", :value => "high"}
+            %param{:name => "scale", :value => "noborder"}
+              %param{:name => "wmode", :value => "transparent"}
+                %embed{:height => "240", :loop => "true", :play => "true", :pluginspage => "http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash", :quality => "high", :src => "/flash/banner_2.swf", :width => "120", :scale => "noborder", :wmode => "transparent"}
+                

@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* Application CSS */
+img, div { behavior: url(iepngfix.htc) }
+
+/* ================= Global ================= */
+body
+{
+	background-color: #CCC;
+	background-image: url(../images/collage.gif);
+	background-attachment:fixed;
+  background-position: top left;
+	margin: 0 auto;
+	padding: 0;
+  padding-top: 10px;
+	width: 100%;
+  min-height:100%;
+  font-size: 16px;
+  font-family: "Cuprum", Courier, monospace;
+  font-stretch: ultra-condensed;
+	letter-spacing: 1;
+  line-height: 17px;
+}
+
+#wrap
+{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #066;
+	overflow: hidden;
+}
+
+.span-24
+{
+	float:none !important;
+}
+
+a, a:link, a:visited, a:active, a:hover
+{
+  text-decoration: none;
+  color: #b61a1a;
+  font-weight: normal;
+}
+
+a:hover 
+{
+  color: #222;
+}
+
+p
+{
+  margin: 15px 0 15px 0;
+	padding: 0;
+  line-height: 1;
+}
+
+h2
+{  
+  font-size: 38px;
+  font-family: "Cuprum", Courier, monospace;
+  font-stretch: ultra-condensed;
+  font-weight: bold;
+  letter-spacing: 1;
+  line-height: 1.2;
+}
+
+h3
+{  
+  font-size: 24px;
+  font-family: "Cuprum", Courier, monospace;
+  font-stretch: ultra-condensed;
+  font-weight: bold;
+  letter-spacing: 1;
+  line-height: 1.2;
+}
+
+h4
+{
+  font-size: 18px;
+  font-family: "Cuprum", Courier, monospace;
+  font-stretch: ultra-condensed;
+  font-weight: bold;
+  letter-spacing: 1;
+  line-height: 1.2;
+  margin: 0;
+  margin-top: 25px;
+}
+
+.black_overlay
+{
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index:1001;
+  -moz-opacity: 0.8;
+  opacity:.80;
+  filter: alpha(opacity=80);
+}
+ 
+.white_content
+{
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 960px;
+  height: 80%;
+  padding: 0;
+  padding-bottom: 20px;
+  border: none;
+  background-image: url(../images/texture.png);
+  background-position: top left;
+  background-repeat: repeat-y;
+  z-index:1002;
+  overflow: auto;
+}
+
+/* ================= Main Content ================= */
+.header
+{
+	background-image: url(../images/texture_head.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	width: 960px;
+	height: 130px;
+  padding-top: 19px;
+}
+
+.content
+{
+	background-image: url(../images/texture.png);
+	background-position: top left;
+	background-repeat: repeat-y;
+	width: 960px;
+  padding-top: 0px;
+}
+
+.footer
+{
+	background-image: url(../images/texture_foot.png);
+	background-position: top left;
+	background-repeat: repeat-y;
+	width: 960px;
+	height: 113px;
+}
+
+/* ================= Header Content ================= */
+.flash-header-holder
+{
+  padding-top: 22px;
+}
+
+/* ================= Footer Content ================= */
+.footer_line 
+{
+  background-image: url(../images/footer_line.png);
+  background-position-x: 3px;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 17px;
+}
+
+/* ================= Page Content ================= */
+.menu
+{
+  background-image: url(../images/btns_underline_2.png);
+  background-position: bottom right;
+	background-repeat: no-repeat;
+  padding-left: 80px;
+  margin-top: 0px;
+}
+
+.page-content
+{
+  padding-left: 80px;
+  padding-top: 20px;
+}
+
+.left-panel
+{
+  padding-top: 25px;
+}
+
+.left-panel-top
+{
+  background-image: url(../images/month.png);
+  background-position-x: 4px;
+  background-position-y: 0px;
+	background-repeat: no-repeat;
+  width: 100%;
+  height: 36px;
+  margin-bottom: 0px;
+}
+.left-panel-content 
+{
+  background-image: url(../images/accent_V_line.png);
+  background-position: top right;
+  background-repeat: repeat-y;
+}
+
+.image-title
+{
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.devider-1
+{
+  background-image: url(../images/article_underline.png);
+  background-position: center;
+  background-repeat: no-repeat;  
+  height: 10px;
+  margin-bottom: 5px;
+}
+
+.devider-2
+{
+  background-image: url(../images/coments_underline.png);
+  background-position: center;
+  background-repeat: no-repeat;  
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.devider-3
+{
+  background-image: url(../images/accent_line_001.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 188px;
+  height: 2px;
+}
+
+.devider-4
+{
+  margin-top: 20px;
+}
+
+#error_explanation h2
+{
+  font-size: 24px;
+  font-family: "Cuprum", Courier, monospace;
+  font-stretch: ultra-condensed;
+  font-weight: bold;
+  letter-spacing: 1;
+  line-height: 1.2;
+}
+#error_explanation ul
+{
+  list-style-type: none;
+}
+
+/* ================= Inputs ================= */
+.input-label 
+{
+  line-height: 28px;
+}
+
+.input-holder
+{
+  background-image: url(../images/registration_input.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 127px;
+  height: 22px;
+  padding-top: 2px;
+  padding-left: 3px;
+  text-align: left;
+  line-height: 22px;
+}
+
+.input-holder input
+{
+  border: none;
+  background: none;
+  width: 120px;
+  height: 15px;
+}
+
+.textarea-holder
+{
+  background-image: url(../images/coment_frame.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 85px;
+  padding: 10px;
+  text-align: left;
+}
+
+.textarea-holder textarea
+{
+  border: none;
+  background: none;
+  width: 380px;
+  height: 80px;
+}

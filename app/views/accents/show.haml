@@ -1,0 +1,4 @@
+- content_for :main_menu, render(:partial => "shared/main_menu")
+- content_for :sidebar, render(:partial => "shared/sidebar")
+
+= render "accents/type_#{@accent.view_type}"

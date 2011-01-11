@@ -1,0 +1,13 @@
+- if @accent.image_title?
+  .span-19.image-title.last{:align => "right"}
+    = image_tag(@accent.image_title.url(:medium))
+.span-18.last
+  - if @prev
+    = link_to image_tag("left_arrow.png", :name => "left-arrow", :onmouseover => "roll('left-arrow', '/images/left_arrow_hover.png')", :onmouseout => "roll('left-arrow', '/images/left_arrow.png')"), accent_type_image_path(@accent, @prev)
+  \...#{@current.title}...
+  - if @next
+    = link_to image_tag("right_arrow.png", :name => "right-arrow", :onmouseover => "roll('right-arrow', '/images/right_arrow_hover.png')", :onmouseout => "roll('right-arrow', '/images/right_arrow.png')"), accent_type_image_path(@accent, @next)
+  .devider-1
+  = image_tag(@current.file.url(:medium))
+
+= render "shared/comments"

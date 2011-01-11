@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %link{:href => "/images/helpus_icon.png", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/images/helpus_icon.png", :rel => "shortcut icon", :type => "image/x-icon"}
+    %link{:href => "/images/helpus_icon.png", :rel => "bookmark", :type => "image/x-icon"}
+    %title helpus.bg admin
+    = stylesheet_link_tag "flutie", "admin"
+    = csrf_meta_tag
+  %body
+    #nav_container
+      %ul#nav
+        %li
+          = link_to "Потребители", admin_users_path, :class => "current"
+        %li
+          = link_to "Списания", admin_magazines_path
+  .content
+    = yield

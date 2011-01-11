@@ -1,0 +1,29 @@
+%h2 Users
+%table
+  %tr
+    %th ID
+    %th Потребителско Име
+    %th Име
+    %th E-mail
+    %th Роля
+    %th Създаден на
+    %th &nbsp;
+    %th &nbsp;
+  - @users.each do |user|
+    %tr
+      %td
+        = user.id
+      %td
+        = user.username
+      %td
+        = user.name
+      %td
+        = user.email
+      %td
+        = user.role
+      %td
+        = user.created_at
+      %td
+        = link_to "промяна", edit_admin_user_path(user)
+      %td
+        = link_to "изтриване", admin_user_path(user), :method => "delete"

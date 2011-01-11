@@ -1,0 +1,30 @@
+%h2 
+  Списания (#{link_to "добави нов брой", new_admin_magazine_path})
+%table
+  %tr
+    %th ID
+    %th Име
+    %th Активно
+    %th От дата
+    %th Корица
+    %th
+  - @magazines.each do |magazine|
+    %tr
+      %td 
+        = magazine.id
+      %td
+        = magazine.name
+      %td
+        = magazine.active
+      %td
+        = magazine.created_at
+      %td
+        = image_tag(magazine.cover.url(:thumb))
+      %td
+      
+/        = link_to "акценти", admin_magazine_accents_path(magazine)
+/        = link_to "галерия", admin_magazine_galleries_path(magazine)
+/        = link_to "ежедневие", admin_magazine_dailies_path(magazine)
+/        = link_to "промяна", edit_admin_magazine_path(magazine)
+/        = link_to "изтриване", admin_magazine_path(magazine), :method => "delete"
+  

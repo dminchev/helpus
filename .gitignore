@@ -1,0 +1,8 @@
+.bundle
+.redcar
+db/*.sqlite3
+log/*.log
+public/system/*
+spec/tmp/*
+tmp/**/*
+

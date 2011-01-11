@@ -1,0 +1,27 @@
+.span-9{:align => "right"}
+  статии
+.span-7.last{:align => "left"}  
+  = will_paginate @dailies_list
+.span-18.last{:align => "center"}
+  .devider-1
+  - @dailies_list.each do |daily|
+    = link_to daily.title, daily_path(daily, :page => params[:page])
+    %br
+  .devider-1
+.span-18.last{:align => "right"}
+  %h3= @daily.title
+.span-5#gallery{:align => "center"}
+  - @daily.daily_photos.each do |photo|
+    = link_to image_tag(photo.file.url(:thumb)), photo.file.url(:medium)
+    .clear
+  &nbsp;
+.span-13.last{:align => "justify"}
+  = raw @daily.text.gsub(/\n/, '<br>')
+
+.span-18.last{:align => "center"}
+  = render "shared/comments"
+  
+:javascript
+  $(function() {
+  	$('#gallery a').lightBox(); // Select all links in object with gallery ID
+  });

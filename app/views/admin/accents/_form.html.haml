@@ -1,0 +1,11 @@
+- semantic_form_for [:admin, @magazine, @accent], :html => { :multipart => true } do |form|
+  = form.inputs :name => "Basic" do
+    = form.input :name
+    = form.input :view_type, :as => :select, :collection => ["image", "image-text", "text"]
+    = form.input :title
+    = form.input :text
+    = form.input :image   
+    = form.input :image_hover      
+    = form.input :image_title      
+  = form.buttons do
+    = form.commit_button

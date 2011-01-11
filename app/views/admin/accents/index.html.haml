@@ -1,0 +1,30 @@
+%h2 
+  Акценти (#{link_to "добави нов акцент", new_admin_magazine_accent_path})
+%table
+  %tr
+    %th ID
+    %th Име
+    %th Тип
+    %th Заглавие
+    %th Файл
+    %th
+  - @accents.each do |accent|
+    %tr
+      %td 
+        = accent.id
+      %td
+        = accent.name
+      %td
+        = accent.view_type
+      %td
+        = accent.title
+      %td
+        = image_tag(accent.image.url)
+        %br
+        = image_tag(accent.image_hover.url)
+      %td
+        = link_to "снимки", admin_magazine_accent_accent_photos_path(@magazine, accent)
+        = link_to "промяна", edit_admin_magazine_accent_path(@magazine, accent)
+        = link_to "изтриване", admin_magazine_accent_path(@magazine, accent), :method => "delete"
+  
+= link_to "списания", admin_magazines_path

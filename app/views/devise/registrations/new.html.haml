@@ -1,0 +1,56 @@
+.span-18.last{:align => "right"}
+  %h2 регистрация
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  .span-18.last{:align => "center"}
+    = devise_error_messages!
+    
+  .span-9.input-label{:align => "right"}
+    потребителско име
+  .span-9.input-holder.last{:align => "left"}
+    = f.text_field :username
+    
+  .span-9.input-label{:align => "right"}
+    %b e-mail
+  .span-9.input-holder.last{:align => "left"}
+    = f.email_field :email
+    
+  .span-9.input-label{:align => "right"}
+    %b парола
+  .span-9.input-holder.last{:align => "left"}
+    = f.password_field :password
+    
+  .span-9.input-label{:align => "right"}
+    %b парола отново
+  .span-9.input-holder.last{:align => "left"}
+    = f.password_field :password_confirmation
+    
+  .span-9.input-label{:align => "right"}
+    реално име
+  .span-9.input-holder.last{:align => "left"}
+    = f.text_field :name
+  .span-18.last{:align => "center"}
+    = f.check_box :accept_terms
+    прочетох и съм съгласен с 
+    %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-global').style.display='block';document.getElementById('fade').style.display='block'"} условията за ползване
+    и с
+    %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-comments').style.display='block';document.getElementById('fade').style.display='block'"} правилата за коментиране
+  .span-18.last{:align => "center"}
+    = f.submit "регистрация"
+  
+.span-18.last{:align => "right"}
+  %br= render :partial => "devise/shared/links"
+  
+.span-24
+  #light-terms-global.white_content
+    .span-2
+      &nbsp;
+    .span-20.last{:align => "justify"}
+      = render :partial => "shared/terms_global"
+      %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-global').style.display='none';document.getElementById('fade').style.display='none'"} затвори
+  #light-terms-comments.white_content
+    .span-2
+      &nbsp;
+    .span-20.last{:align => "justify"}
+      = render :partial => "shared/terms_comments"
+      %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-comments').style.display='none';document.getElementById('fade').style.display='none'"} затвори
+  

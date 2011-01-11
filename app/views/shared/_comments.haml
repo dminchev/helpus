@@ -1,0 +1,29 @@
+%h4 коментари
+.devider-2  
+- if user_signed_in?
+  = semantic_form_for @model.comments.new do |form|
+    = form.inputs do
+      Вашият коментар
+      .textarea-holder
+        = form.input :comment, :label => false    
+      = form.input "commentable", :as => :hidden, :value => @model.class.name
+      = form.input "commentable_id", :as => :hidden, :value => @model.id
+    - form.buttons do
+      = form.commit_button :button_html => { :value => "коментирай" }
+
+- @model.comments.each do |comment|
+  .span-5{:align => "right"}
+    %strong
+      - if comment.user.username == nil
+        = comment.user.name
+      - else
+        = comment.user.username
+  .span-11.last{:align => "left", :style => "text-decoration: underline;"}
+    %em
+      = comment.created_at.strftime("%d %B %Y в %H:%m")
+  .span-5
+    &nbsp;
+  .span-9.last{:align => "justify"}
+    = raw sanitize_post(comment.comment)
+  .span-18.last
+    .devider-2

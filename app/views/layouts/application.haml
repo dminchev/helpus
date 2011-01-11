@@ -1,0 +1,36 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title helpus.bg
+    %link{:href => "http://fonts.googleapis.com/css?family=Cuprum&subset=cyrillic", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/images/helpus_icon.png", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/images/helpus_icon.png", :rel => "shortcut icon", :type => "image/x-icon"}
+    %link{:href => "/images/helpus_icon.png", :rel => "bookmark", :type => "image/x-icon"}
+    = stylesheet_link_tag "ie", "print", "screen", "application", "jquery.lightbox-0.5"
+    = formtastic_stylesheet_link_tag
+    = javascript_include_tag "jquery-1.4.4", "application", "jquery.lightbox-0.5.js", "iepngfix_tilebg", "http://connect.facebook.net/bg_BG/all.js#xfbml=1"
+    = csrf_meta_tag
+  %body{:onload => "fixContent();"}
+    .wrap{:align => "center"}
+      .span-24.header.last
+        .span-11
+          &nbsp;
+        .span-13.last{:align => "right"}
+          = image_tag ("/images/head_flash.png"), :alt => "helpus.bg", :title => "helpus.bg", :border => "0", :height => "90", :width => "503"
+        .span-24.last{:align => "right"}
+          = image_tag ("/images/slogan.png"), :alt => "днешния век е век на свободата", :title => "днешния век е век на свободата", :border => "0", :height => "35", :width => "752"          
+      .span-24.content.last
+        .span-5
+          = yield :sidebar
+          &nbsp;
+        .span-18.last
+          = yield :main_menu
+          .span-16.page-content.last
+            - show_flash
+          = yield
+        .clear
+      .span-24.footer.last
+        .footer_line{:align => "left"}
+        
+#fade.black_overlay        

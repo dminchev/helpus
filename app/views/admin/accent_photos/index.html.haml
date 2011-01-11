@@ -1,0 +1,25 @@
+%h2 
+  Снимки (#{link_to "добави нова снимка", new_admin_magazine_accent_accent_photo_path})
+%table
+  %tr
+    %th ID
+    %th Име
+    %th Заглавие
+    %th Файл
+    %th
+  - @photos.each do |photo|
+    %tr
+      %td 
+        = photo.id
+      %td
+        = photo.name
+      %td
+        = photo.title
+      %td
+        = image_tag(photo.file.url(:thumb))
+      %td
+        = link_to "промяна", edit_admin_magazine_accent_accent_photo_path(@magazine, @accent, photo)
+        = link_to "изтриване", admin_magazine_accent_accent_photo_path(@magazine, @accent, photo), :method => "delete"
+  
+= link_to "списания", admin_magazines_path
+= link_to "акценти", admin_magazine_accents_path(@magazine)
