@@ -6,5 +6,6 @@
     = @accent.title
 .span-16.page-content.last{:align => "justify"}
   = raw @accent.text.gsub(/\n/, '<br>')
+  = render "shared/fb_like"
 .span-18.last{:align => "center"}
   = render "shared/comments"
