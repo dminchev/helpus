@@ -1,0 +1,7 @@
+.share
+  .fb-share-container
+    %a{:name => "fb_share", :share_url => request["REQUEST_URI"], :type => "button"}
+    %script{:src => "http://static.ak.fbcdn.net/connect.php/js/FB.Share", :type => "text/javascript"}
+  .tweet-container
+    %a.twitter-share-button{"data-count" => "none", "data-url" => request["REQUEST_URI"], "data-via" => "helpusbg", :href => "http://twitter.com/share"} Tweet
+    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}

@@ -1,5 +1,8 @@
 - content_for :main_menu, render(:partial => "shared/main_menu")
+- content_for :meta, render(:partial => "shared/meta")
 - content_for :sidebar, render(:partial => "shared/sidebar")
+- content_for :title, "#{@model.title} - "
+
 
 .span-18.last{:align => "justify"}
   = render "daily"

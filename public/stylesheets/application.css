@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* Application CSS */
-img, div { behavior: url(iepngfix.htc) }
+img, div { behavior: url(../iepngfix.htc) }
 
 /* ================= Global ================= */
 body
@@ -252,6 +252,24 @@ h4
 #error_explanation ul
 {
   list-style-type: none;
+}
+
+.fb-like-container, .share
+{
+  width: 580px;
+  padding-top: 15px;
+  text-align: left;
+}
+
+.fb-share-container
+{
+  float: left;
+  padding: 1px 5px 0 0px;
+}
+.tweet-container
+{
+  float: left;
+  padding: 0 5px 0 5px;
 }
 
 /* ================= Inputs ================= */

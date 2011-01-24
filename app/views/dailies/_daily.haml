@@ -18,6 +18,8 @@
 .span-13.last{:align => "justify"}
   = raw @daily.text.gsub(/\n/, '<br>')
   = render "shared/fb_like"
+  = render "shared/share"
+
 .span-18.last{:align => "center"}
   = render "shared/comments"
   
@@ -25,3 +27,5 @@
   $(function() {
   	$('#gallery a').lightBox(); // Select all links in object with gallery ID
   });
+  
+  
