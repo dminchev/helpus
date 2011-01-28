@@ -11,6 +11,7 @@
     /= formtastic_stylesheet_link_tag
     = javascript_include_tag "jquery-1.4.4", "application", "iepngfix_tilebg", "http://connect.facebook.net/bg_BG/all.js#xfbml=1"
     /= csrf_meta_tag
+
   %body{:onload => "fixCover();"}
     .wrap{:align => "center"}
       .span-24.last

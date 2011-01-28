@@ -14,6 +14,7 @@
     = formtastic_stylesheet_link_tag
     = javascript_include_tag "jquery-1.4.4", "application", "jquery.lightbox-0.5.js", "iepngfix_tilebg", "http://connect.facebook.net/bg_BG/all.js#xfbml=1"
     = csrf_meta_tag
+
   %body{:onload => "fixContent();"}
     .wrap{:align => "center"}
       .span-24.header.last
