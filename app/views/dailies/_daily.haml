@@ -1,11 +1,11 @@
 .span-9{:align => "right"}
   статии
-.span-7.last{:align => "left"}  
+.span-7.last{:align => "left"}
   = will_paginate @dailies_list
 .span-18.last{:align => "center"}
   .devider-1
   - @dailies_list.each do |daily|
-    = link_to daily.title, daily_path(daily, :page => params[:page])
+    = link_to daily.title, daily_path(daily, :page => params[:page]), :class => (daily == @daily) ? "a2Selected" : "a2"
     %br
   .devider-1
 .span-18.last{:align => "right"}
