@@ -18,12 +18,19 @@
   %body{:onload => "fixContent();"}
     .wrap{:align => "center"}
       .span-24.header.last
-        .span-11
-          &nbsp;
+        .span-11.header-flash
+          %object{:classid => "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000", :codebase => "http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0", :height => "72", :width => "392"}
+            %param{:name => "movie", :value => "/flash/banner_1.swf"}
+              %param{:name => "play", :value => "true"}
+                %param{:name => "loop", :value => "true"}
+                  %param{:name => "quality", :value => "high"}
+                    %param{:name => "scale", :value => "noborder"}
+                      %param{:name => "wmode", :value => "transparent"}
+                        %embed{:height => "72", :loop => "true", :play => "true", :pluginspage => "http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash", :quality => "high", :src => "/flash/banner_1.swf", :width => "392", :scale => "noborder", :wmode => "transparent"}
         .span-13.last{:align => "right"}
           = image_tag ("/images/head_flash.png"), :alt => "helpus.bg", :title => "helpus.bg", :border => "0", :height => "90", :width => "503"
         .span-24.last{:align => "right"}
-          = image_tag ("/images/slogan.png"), :alt => "днешния век е век на свободата", :title => "днешния век е век на свободата", :border => "0", :height => "35", :width => "752"          
+          = image_tag ("/images/slogan.png"), :alt => "днешния век е век на свободата", :title => "днешния век е век на свободата", :border => "0", :height => "35", :width => "752"
       .span-24.content.last
         .span-5
           = yield :sidebar
@@ -36,5 +43,23 @@
         .clear
       .span-24.footer.last
         .footer_line{:align => "left"}
-        
-#fade.black_overlay        
+        %a{:class => "a2", :href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-global').style.display='block';document.getElementById('fade').style.display='block'"} условията за ползване
+        |
+        %a{:class => "a2", :href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-comments').style.display='block';document.getElementById('fade').style.display='block'"} правилата за коментиране
+        |
+        %a{:class => "a2", :href => "http://welldoers.eu", :target => "_blank"} welldoers
+      .span-24
+        #light-terms-global.white_content
+          .span-2
+            &nbsp;
+          .span-20.last{:align => "justify"}
+            = render :partial => "shared/terms_global"
+            %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-global').style.display='none';document.getElementById('fade').style.display='none'"} затвори
+        #light-terms-comments.white_content
+          .span-2
+            &nbsp;
+          .span-20.last{:align => "justify"}
+            = render :partial => "shared/terms_comments"
+            %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-comments').style.display='none';document.getElementById('fade').style.display='none'"} затвори
+            
+#fade.black_overlay

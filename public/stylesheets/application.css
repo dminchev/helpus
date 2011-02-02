@@ -118,6 +118,18 @@ h4
   overflow: auto;
 }
 
+.a2, .a2:link, .a2:active, .a2:visited, .a2:hover
+{
+  text-decoration: none;
+  color: #222;
+  font-weight: normal;
+}
+
+.a2:hover
+{
+  color: #b61a1a;
+}
+
 /* ================= Main Content ================= */
 .header
 {
@@ -148,9 +160,10 @@ h4
 }
 
 /* ================= Header Content ================= */
-.flash-header-holder
+.header-flash
 {
   padding-top: 22px;
+  height: 72px;
 }
 
 /* ================= Footer Content ================= */
@@ -162,6 +175,7 @@ h4
   background-repeat: no-repeat;
   width: 100%;
   height: 17px;
+  margin-bottom: 10px;
 }
 
 /* ================= Page Content ================= */
@@ -316,4 +330,45 @@ h4
   background: none;
   width: 380px;
   height: 80px;
+}
+
+
+
+
+ul, li
+{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.menu_body
+{
+  display:none;
+  width:184px;
+  border-right:1px solid #998675;
+  border-bottom:1px solid #998675;
+  border-left:1px solid #998675;
+  position: absolute;
+  z-index: 1;
+}
+.menu_body li
+{
+  background:#493e3b;
+}
+.menu_body li.alt
+{
+  background:#362f2d;
+}
+.menu_body li a
+{
+  color:#FFFFFF;
+  text-decoration:none;
+  padding:10px;
+  display:block;
+}
+.menu_body li a:hover
+{
+  padding:15px 10px;
+  font-weight:bold;
 }

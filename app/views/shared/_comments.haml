@@ -1,15 +1,19 @@
 %h4 коментари
-.devider-2  
+.devider-2
 - if user_signed_in?
   = semantic_form_for @model.comments.new do |form|
     = form.inputs do
       Вашият коментар
       .textarea-holder
-        = form.input :comment, :label => false    
+        = form.input :comment, :label => false
       = form.input "commentable", :as => :hidden, :value => @model.class.name
       = form.input "commentable_id", :as => :hidden, :value => @model.id
     - form.buttons do
       = form.commit_button :button_html => { :value => "коментирай" }
+- else
+  %form{:action => new_user_registration_path}
+    %input{:type => "submit", :value=>"коментирай", :name => "submit"}
+  %br
 
 - @model.comments.each do |comment|
   .span-5{:align => "right"}
