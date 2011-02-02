@@ -41,7 +41,7 @@ a, a:link, a:visited, a:active, a:hover
   font-weight: normal;
 }
 
-a:hover 
+a:hover
 {
   color: #222;
 }
@@ -54,7 +54,7 @@ p
 }
 
 h2
-{  
+{
   font-size: 38px;
   font-family: "Cuprum", Courier, monospace;
   font-stretch: ultra-condensed;
@@ -64,7 +64,7 @@ h2
 }
 
 h3
-{  
+{
   font-size: 24px;
   font-family: "Cuprum", Courier, monospace;
   font-stretch: ultra-condensed;
@@ -99,7 +99,7 @@ h4
   opacity:.80;
   filter: alpha(opacity=80);
 }
- 
+
 .white_content
 {
   display: none;
@@ -154,7 +154,7 @@ h4
 }
 
 /* ================= Footer Content ================= */
-.footer_line 
+.footer_line
 {
   background-image: url(../images/footer_line.png);
   background-position-x: 3px;
@@ -187,15 +187,15 @@ h4
 
 .left-panel-top
 {
-  background-image: url(../images/month.png);
   background-position-x: 4px;
   background-position-y: 0px;
 	background-repeat: no-repeat;
-  width: 100%;
+  width: 186px;
   height: 36px;
   margin-bottom: 0px;
+  padding-left: 4px;
 }
-.left-panel-content 
+.left-panel-content
 {
   background-image: url(../images/accent_V_line.png);
   background-position: top right;
@@ -212,7 +212,7 @@ h4
 {
   background-image: url(../images/article_underline.png);
   background-position: center;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   height: 10px;
   margin-bottom: 5px;
 }
@@ -221,7 +221,7 @@ h4
 {
   background-image: url(../images/coments_underline.png);
   background-position: center;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   height: 10px;
   margin-bottom: 20px;
 }
@@ -273,7 +273,7 @@ h4
 }
 
 /* ================= Inputs ================= */
-.input-label 
+.input-label
 {
   line-height: 28px;
 }

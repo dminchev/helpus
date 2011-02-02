@@ -1,4 +1,4 @@
-= image_tag("cover.png", :id => "cover-image", :border => "0", :usemap => "#cover-map")
+= image_tag(@magazine.cover(:original), :id => "cover-image", :border => "0", :usemap => "#cover-map")
 
 %map{:name => "cover-map"}
   - unless user_signed_in?

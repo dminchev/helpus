@@ -1,4 +1,5 @@
-.left-panel-top
+.left-panel-top{:align => "left"}
+  = image_tag(@magazine.month(:original), :id => "month-image", :border => "0")
 .left-panel-content
   - @accents.each do |accent|
     = link_to image_tag(accent.image.url, :name => "accent#{accent.id}", :onmouseover => "roll('accent#{accent.id}', '#{accent.image_hover.url}')", :onmouseout => "roll('accent#{accent.id}', '#{accent.image.url}')"), accent_path(accent)
@@ -12,4 +13,3 @@
             %param{:name => "scale", :value => "noborder"}
               %param{:name => "wmode", :value => "transparent"}
                 %embed{:height => "240", :loop => "true", :play => "true", :pluginspage => "http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash", :quality => "high", :src => "/flash/banner_2.swf", :width => "120", :scale => "noborder", :wmode => "transparent"}
-                

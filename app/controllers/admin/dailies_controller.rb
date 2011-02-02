@@ -1,7 +1,7 @@
 class Admin::DailiesController < Admin::AdminController
   def index
     @magazine = Magazine.find(params[:magazine_id])
-    @dailies = @magazine.dailies
+    @dailies = @magazine.dailies.order("`order` ASC")
   end
 
   def new
@@ -25,5 +25,13 @@ class Admin::DailiesController < Admin::AdminController
     @daily.update_attributes(params[:daily])
     @daily.save
     redirect_to(admin_magazine_dailies_url)
+  end
+
+  def order
+    @magazine = Magazine.find(params[:magazine_id])
+    params[:order].each do |key, value|
+      Daily.find(key).update_attribute("order", value)
+    end
+    render :nothing => true
   end
 end

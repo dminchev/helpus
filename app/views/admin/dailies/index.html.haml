@@ -1,25 +1,26 @@
-%h2 
+%h2
   Ежедневие (#{link_to "добави статия", new_admin_magazine_daily_path})
-%table
+%table{:id => ""}
   %tr
     %th ID
     %th Име
     %th Заглавие
     %th Текст
     %th
-  - @dailies.each do |daily|
-    %tr
-      %td 
-        = daily.id
-      %td
-        = daily.name
-      %td
-        = daily.title
-      %td
-        = raw daily.text[0..200]
-        \...
-      %td
-        = link_to "снимки", admin_magazine_daily_daily_photos_path(@magazine, daily)
-        = link_to "промяна", edit_admin_magazine_daily_path(@magazine, daily)
-        = link_to "изтриване", admin_magazine_daily_path(@magazine, daily), :method => "delete"
-  
+  %tbody{:class => "sortable"}
+    - @dailies.each do |daily|
+      %tr{:id => daily.id}
+        %td
+          = daily.id
+        %td
+          = daily.name
+        %td
+          = daily.title
+        %td
+          = raw daily.text[0..200]
+          \...
+        %td
+          = link_to "снимки", admin_magazine_daily_daily_photos_path(@magazine, daily)
+          = link_to "промяна", edit_admin_magazine_daily_path(@magazine, daily)
+          = link_to "изтриване", admin_magazine_daily_path(@magazine, daily), :method => "delete"
+
