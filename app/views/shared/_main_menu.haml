@@ -1,7 +1,7 @@
 .span-16.menu.last{:align => "right"}
   = link_to image_tag("btn_01.png", :name => "mmenu1", :onmouseover => "roll('mmenu1', '/images/btn_01_roll.png')", :onmouseout => "roll('mmenu1', '/images/btn_01.png')"), user_root_path
   = link_to image_tag("btn_02.png", :name => "mmenu2", :onmouseover => "roll('mmenu2', '/images/btn_02_roll.png')", :onmouseout => "roll('mmenu2', '/images/btn_02.png')"), about_path
-  = link_to image_tag("btn_03.png", :name => "mmenu3", :onmouseover => "roll('mmenu3', '/images/btn_03_roll.png')", :onmouseout => "roll('mmenu3', '/images/btn_03.png')"), dailies_path
+  = link_to image_tag("btn_03.png", :name => "mmenu3", :onmouseover => "roll('mmenu3', '/images/btn_03_roll.png')", :onmouseout => "roll('mmenu3', '/images/btn_03.png')"), daily_path(@magazine.dailies.order('`order` ASC').first)
   = link_to image_tag("btn_04.png", :name => "mmenu4", :onmouseover => "roll('mmenu4', '/images/btn_04_roll.png')", :onmouseout => "roll('mmenu4', '/images/btn_04.png')"), gallery_path(@magazine.galleries.first)
   %a{:href => ""}
     %img{:border => "0", :src => "/images/btn_06.png"}/
