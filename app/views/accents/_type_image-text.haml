@@ -3,10 +3,10 @@
     = image_tag(@accent.image_title.url(:medium))
 .span-18.last{:align => "right"}
   %h3
-    = @accent.title 
+    = @accent.title
 .span-5#gallery{:align => "center"}
   - @accent.accent_photos.each do |photo|
-    = link_to image_tag(photo.file.url(:thumb)), photo.file.url(:medium)
+    = link_to image_tag(photo.file.url(:thumb), :alt => photo.title, :title => photo.title), photo.file.url(:medium), :alt => @accent.title, :title => @accent.title
     .clear
   &nbsp;
 .span-13.last{:align => "justify"}
@@ -15,7 +15,7 @@
   = render "shared/share"
 .span-18.last{:align => "center"}
   = render "shared/comments"
-  
+
 :javascript
   $(function() {
   	$('#gallery a').lightBox(); // Select all links in object with gallery ID

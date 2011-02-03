@@ -12,7 +12,7 @@
   %h3= @daily.title
 .span-5#gallery{:align => "center"}
   - @daily.daily_photos.each do |photo|
-    = link_to image_tag(photo.file.url(:thumb)), photo.file.url(:medium)
+    = link_to image_tag(photo.file.url(:thumb), :alt => photo.title, :title => photo.title), photo.file.url(:medium), :alt => @daily.title, :title => @daily.title
     .clear
   &nbsp;
 .span-13.last{:align => "justify"}
@@ -22,10 +22,9 @@
 
 .span-18.last{:align => "center"}
   = render "shared/comments"
-  
+
 :javascript
   $(function() {
   	$('#gallery a').lightBox(); // Select all links in object with gallery ID
   });
-  
-  
+

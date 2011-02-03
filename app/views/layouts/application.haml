@@ -2,7 +2,6 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    = yield :meta
     %title
       = yield :title
       helpus.bg
@@ -14,6 +13,7 @@
     = formtastic_stylesheet_link_tag
     = javascript_include_tag "jquery-1.4.4", "application", "jquery.lightbox-0.5.js", "iepngfix_tilebg", "http://connect.facebook.net/bg_BG/all.js#xfbml=1", "jquery-ui-1.8.9.custom.min"
     = csrf_meta_tag
+    = yield :meta
 
   %body{:onload => "fixContent();"}
     .wrap{:align => "center"}
@@ -61,5 +61,5 @@
           .span-20.last{:align => "justify"}
             = render :partial => "shared/terms_comments"
             %a{:href => "javascript:void(0)", :onclick => "document.getElementById('light-terms-comments').style.display='none';document.getElementById('fade').style.display='none'"} затвори
-            
+
 #fade.black_overlay
